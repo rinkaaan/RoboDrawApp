@@ -24,7 +24,7 @@ export default function MainLayoutError() {
         }),
       )
     }
-    navigate("/#/settings", { replace: true })
+    // navigate("/#/settings", { replace: true })
   }, [error])
 
   return null
