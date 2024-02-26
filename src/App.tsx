@@ -10,9 +10,15 @@ import { Fragment } from "react"
 const router = createHashRouter([
   {
     path: "/",
-    Component: MainLayout,
+    // Component: MainLayout,
+    Component: Outlet,
     errorElement: <MainLayoutError/>,
     children: [
+      {
+        path: "canvas",
+        lazy: () => import("./routes/canvas/CanvasRoute"),
+        handle: createCrumb("Canvas", "/canvas"),
+      },
       {
         path: "settings",
         lazy: () => import("./routes/settings/SettingsRoute"),
