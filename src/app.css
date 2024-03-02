@@ -3,7 +3,7 @@ button {
 }
 
 html, body {
-    overscroll-behavior-y: none;
+    overscroll-behavior: none;
 }
 
 .awsui_mobile-bar_1fj9k_1uvk8_49 {

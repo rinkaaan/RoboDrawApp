@@ -19,10 +19,7 @@ export function Component() {
       >
         <SpaceBetween size="l">
           <Container header={<Header variant="h2">Open here</Header>}>
-            <Button
-              onClick={openCanvas}
-              variant="primary"
-            >Click this</Button>
+            <Button onClick={openCanvas}>Click this</Button>
           </Container>
         </SpaceBetween>
       </ContentLayout>
