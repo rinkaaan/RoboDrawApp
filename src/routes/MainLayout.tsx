@@ -12,6 +12,11 @@ import { prepareNotifications } from "../common/storeUtils"
 const items: SideNavigationProps.Item[] = [
   {
     type: "link",
+    text: "Canvas",
+    href: "/canvas",
+  },
+  {
+    type: "link",
     text: "Settings",
     href: "/settings",
   },
@@ -66,7 +71,7 @@ export default function MainLayout() {
   }, [crumbs])
 
   if (location.pathname === "/") {
-    return <Navigate to="/settings" replace/>
+    return <Navigate to="/canvas" replace/>
   } else {
     return (
       <Fragment>
@@ -76,7 +81,7 @@ export default function MainLayout() {
             <SideNavigation
               header={{
                 text: "RoboDraw",
-                href: "/settings",
+                href: "/canvas",
               }}
               onFollow={e => {
                 e.preventDefault()

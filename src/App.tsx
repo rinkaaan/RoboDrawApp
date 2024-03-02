@@ -1,4 +1,4 @@
-import { createHashRouter, Navigate, Outlet, RouterProvider } from "react-router-dom"
+import { createHashRouter, Navigate, RouterProvider } from "react-router-dom"
 import MainLayout from "./routes/MainLayout"
 import MainLayoutError from "./routes/MainLayoutError"
 import { mainSelector } from "./routes/mainSlice"
@@ -10,8 +10,7 @@ import { Fragment } from "react"
 const router = createHashRouter([
   {
     path: "/",
-    // Component: MainLayout,
-    Component: Outlet,
+    Component: MainLayout,
     errorElement: <MainLayoutError/>,
     children: [
       {
@@ -26,7 +25,7 @@ const router = createHashRouter([
       },
       {
         path: "*",
-        Component: () => <Navigate to="/settings"/>,
+        Component: () => <Navigate to="/canvas"/>,
       }
     ],
   },
