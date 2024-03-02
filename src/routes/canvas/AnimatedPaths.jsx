@@ -20,6 +20,10 @@ export default function AnimatedPaths ({ pathDatas, strokeWidth = 2, strokeColor
           const animation = new Konva.Animation((frame) => {
             const time = frame.time
             const dash = length * (time / duration)
+            if (!pathRef.current) {
+              animation.stop()
+              return
+            }
             pathRef.current.dash([dash, length - dash])
           }, pathRef.current.getLayer())
 
@@ -32,6 +36,7 @@ export default function AnimatedPaths ({ pathDatas, strokeWidth = 2, strokeColor
       animations.forEach((animation, index) => {
         setTimeout(() => {
           animation.start()
+          console.log('animation started')
         }, index * (duration + 100))
       })
     }

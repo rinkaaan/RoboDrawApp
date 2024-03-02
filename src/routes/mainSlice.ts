@@ -11,6 +11,8 @@ export interface MainState {
   dirtyRedirectUrl?: string;
   lockScroll?: boolean;
   startingPath?: string;
+
+  canvasOpen: boolean;
 }
 
 const initialState: MainState = {
@@ -21,6 +23,8 @@ const initialState: MainState = {
   dirtyRedirectUrl: undefined,
   lockScroll: false,
   startingPath: undefined,
+
+  canvasOpen: false,
 }
 
 type Notification = Pick<FlashbarProps.MessageDefinition, "type" | "content">
