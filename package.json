@@ -23,7 +23,7 @@
     "open:electron": "cap open @capacitor-community/electron",
     "sync:electron": "ionic cap sync @capacitor-community/electron",
     "open:dist": "open ./dist",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@capacitor-community/electron": "^5.0.1",
@@ -66,7 +66,7 @@
     "eslint": "^8.35.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.32.2",
-    "husky": "^8.0.0",
+    "husky": "^9.0.11",
     "jsdom": "^22.1.0",
     "terser": "^5.4.0",
     "typescript": "^5.1.6",

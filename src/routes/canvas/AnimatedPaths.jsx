@@ -36,7 +36,6 @@ export default function AnimatedPaths ({ pathDatas, strokeWidth = 2, strokeColor
       animations.forEach((animation, index) => {
         setTimeout(() => {
           animation.start()
-          console.log('animation started')
         }, index * (duration + 100))
       })
     }
