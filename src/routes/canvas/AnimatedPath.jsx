@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react"
 import { Path } from "react-konva"
 import Konva from "konva"
 
-export default function AnimatedPath({ pathData }) {
+export default function AnimatedPath({ pathData, strokeWidth = 2, strokeColor = "blue", duration = 500 }) {
   const pathRef = useRef(null)
   const [pathLength, setPathLength] = React.useState(0)
 
@@ -15,7 +15,7 @@ export default function AnimatedPath({ pathData }) {
 
     const animation = new Konva.Animation((frame) => {
       const time = frame.time
-      const dash = length * (time / 500)
+      const dash = length * (time / duration)
       path.dash([dash, length - dash])
     }, path.getLayer())
 
@@ -28,8 +28,8 @@ export default function AnimatedPath({ pathData }) {
     <Path
       ref={pathRef}
       data={pathData}
-      stroke="black"
-      strokeWidth={2}
+      stroke={strokeColor}
+      strokeWidth={strokeWidth}
       dashEnabled={true}
       dashOffset={pathLength}
       dash={[pathLength]}
